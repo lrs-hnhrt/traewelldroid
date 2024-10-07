@@ -188,9 +188,10 @@ fun CheckInCard(
                             top.linkTo(parent.top)
                             width = Dimension.fillToConstraints
                         },
-                        station = status.journey.origin,
-                        timePlanned = status.journey.origin.departurePlanned,
-                        timeReal = status.journey.departureManual ?: status.journey.origin.departureReal,
+                        station = status.journey.destination,
+                        timePlanned = status.journey.destination.arrivalPlanned,
+                        timeReal = status.journey.arrivalManual ?: status.journey.destination.arrivalReal,
+
                         stationSelected = stationSelected
                     )
 
@@ -203,9 +204,10 @@ fun CheckInCard(
                                 bottom.linkTo(parent.bottom)
                                 width = Dimension.fillToConstraints
                             },
-                        station = status.journey.destination,
-                        timePlanned = status.journey.destination.arrivalPlanned,
-                        timeReal = status.journey.arrivalManual ?: status.journey.destination.arrivalReal,
+                        station = status.journey.origin,
+                        timePlanned = status.journey.origin.departurePlanned,
+                        timeReal = status.journey.departureManual ?: status.journey.origin.departureReal,
+
                         verticalAlignment = Alignment.Bottom,
                         stationSelected = stationSelected
                     )
